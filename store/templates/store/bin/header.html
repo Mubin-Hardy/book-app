@@ -34,6 +34,7 @@
 					    </li>
 					    {% else %}
 					    <li class="profile"><a href="{% url 'store:signin' %}">Sign In</a></li>
+						<li class="profile"><a href="{% url 'photos:gallery' %}">See Articles</a></li>
 						 <li class="profile"><a  href="{% url 'store:student_signup' %}"> </a></li>
 					    <li class="cart">
 					    	<a href="{% url 'cart:cart_details' %}">Cart <i class="fa fa-angle-left"></i>
