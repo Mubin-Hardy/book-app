@@ -11,6 +11,7 @@
 			                <th scope="col">Qty</th>
 			                <th scope="col">Status</th>
 			                <th scope="col">Date</th>
+							<th scope="col">Delete</th>
 			            </tr>
 			        </thead>
 			        <tbody class="text-center">
@@ -28,6 +29,7 @@
 			                	{% endif %}
 			                </td>
 			                <td>{{ morder.created }}</td>
+							<td><a style="color:blue; text-decoration:none;font-size:25px;"href="{% url 'order:Delete' morder.id  %}">&#10008;</a></td>
 			            </tr>
 			        	{% endfor %}
 			        </tbody>

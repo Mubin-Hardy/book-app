@@ -40,7 +40,10 @@ def order_create(request):
 			return redirect('store:books')
 	else:
 		return redirect('store:signin')
-			
+def Delete(request,pk):
+    order=Order.objects.get(id=pk)
+    order.delete()
+    return redirect('store:index')
 def order_list(request):
 	my_order = Order.objects.filter(customer_id = request.user.id).order_by('-created')
 	paginator = Paginator(my_order, 5)

@@ -8,4 +8,5 @@ urlpatterns = [
 	path('<int:id>', views.order_details, name="order_details"),
 	path('shipping/', views.order_create, name="order_create"),
 	path('pdf/<int:id>',views.pdf.as_view(), name="pdf"),
+	path('Delete/<int:pk>',views.Delete, name="Delete"),
 ]
