@@ -7,7 +7,7 @@ from .forms import CustomUserCreationForm
 
 
 def loginUser(request):
-    page = 'photos:login'
+    page = 'store:signin'
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -23,11 +23,11 @@ def loginUser(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('photos:login')
+    return redirect('store:signin')
 
 
 def registerUser(request):
-    page = 'photos:register'
+    page = 'store:signup'
     form = CustomUserCreationForm()
 
     if request.method == 'POST':
@@ -44,7 +44,7 @@ def registerUser(request):
     return render(request, 'photos/login_register.html', context)
 
 
-@login_required(login_url='photos:login')
+@login_required(login_url='store:signin')
 def gallery(request):
     user = request.user
     category = request.GET.get('category')
@@ -59,13 +59,13 @@ def gallery(request):
     return render(request, 'photos/gallery.html', context)
 
 
-@login_required(login_url='login')
+@login_required(login_url='store:signin')
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
     return render(request, 'photos/photo.html', {'photo': photo})
 
 
-@login_required(login_url='login')
+@login_required(login_url='store:signin')
 def addPhoto(request):
     user = request.user
 

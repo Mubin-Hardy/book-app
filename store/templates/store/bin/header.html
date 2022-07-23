@@ -20,9 +20,11 @@
 					<ul class="navbar-nav">
 						{% if request.user.is_authenticated %}
 					    <li class="dropdown profile"><a href="#">{{ request.user.username }}</a>
+							
 					        <ul role="menu" class="sub-menu">
 					            <li><a href="{% url 'order:order_list' %}"><i class="fa fa-shopping-cart"></i> My order</a></li>
 														 <li><a  href="{% url 'store:student_signup' %}">ChatBot Assistant </a></li>
+														 <li><a  href="{% url 'photos:gallery' %}">See Articles</a></li>
 					            <li><a href="{% url 'store:signout' %}"><i class="fa fa-sign-out"></i> Sign Out</a></li>
 					        </ul> 
 					    </li>
@@ -34,7 +36,7 @@
 					    </li>
 					    {% else %}
 					    <li class="profile"><a href="{% url 'store:signin' %}">Sign In</a></li>
-						<li class="profile"><a href="{% url 'photos:gallery' %}">See Articles</a></li>
+						
 						 <li class="profile"><a  href="{% url 'store:student_signup' %}"> </a></li>
 					    <li class="cart">
 					    	<a href="{% url 'cart:cart_details' %}">Cart <i class="fa fa-angle-left"></i>

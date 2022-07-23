@@ -1,7 +1,7 @@
 {% extends 'store/base.html' %}
 {% load customfunction %}
 {% block container %}
-<a href="{% url 'sort' %}">Sort By Cost</a>
+<a href="{% url 'store:category2' %}">Sort By Cost</a>
 			<div class="row">
 				{% for item in book %}
 				<div class = 'col-sm-3'>
